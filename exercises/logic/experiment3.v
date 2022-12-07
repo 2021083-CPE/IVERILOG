@@ -86,6 +86,14 @@ module Lab3TestBench;
     part1Maxterm P1Max(a,b,c,oneMaxterm);
     part5Minterm P5Min(a,b,c,d,fiveMinterm);
     part5Maxterm P5Max(a,b,c,d,fiveMaxterm);
+    
+    initial
+        begin
+            $dumpfile("experiment3.vcd");
+            $dumpvars(-1, P1Min, P1Max, P5Min, P5Max);
+            $monitor("%b", oneMinterm, oneMaxterm, fiveMinterm, fiveMaxterm);
+        end
+    
 
     initial begin
         #1 a=0;b=0;c=0;
