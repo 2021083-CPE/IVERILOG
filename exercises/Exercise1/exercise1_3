@@ -1,0 +1,105 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002154d8c65c0 .scope module, "testbench1_3" "testbench1_3" 2 9;
+ .timescale 0 0;
+v000002154d9fac00_0 .net "var1", 0 0, L_000002154d8932e0;  1 drivers
+v000002154d9faca0_0 .var "x1", 0 0;
+v000002154d9fad40_0 .var "x2", 0 0;
+v000002154d9fade0_0 .var "x3", 0 0;
+v000002154d9fae80_0 .net "x4", 0 0, L_000002154d8c51f0;  1 drivers
+S_000002154d8c6750 .scope module, "tb3" "exercise1_3" 2 13, 2 1 0, S_000002154d8c65c0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "var1";
+    .port_info 1 /OUTPUT 1 "x_4";
+    .port_info 2 /INPUT 1 "x_1";
+    .port_info 3 /INPUT 1 "x_2";
+    .port_info 4 /INPUT 1 "x_3";
+L_000002154d8c51f0 .functor XOR 1, v000002154d9faca0_0, v000002154d9fad40_0, v000002154d9fade0_0, C4<0>;
+L_000002154d8932e0 .functor XOR 1, v000002154d9faca0_0, v000002154d9fad40_0, v000002154d9fade0_0, L_000002154d8c51f0;
+v000002154d8930a0_0 .net "var1", 0 0, L_000002154d8932e0;  alias, 1 drivers
+v000002154d892e40_0 .net "x_1", 0 0, v000002154d9faca0_0;  1 drivers
+v000002154d893400_0 .net "x_2", 0 0, v000002154d9fad40_0;  1 drivers
+v000002154d8c68e0_0 .net "x_3", 0 0, v000002154d9fade0_0;  1 drivers
+v000002154d8c6980_0 .net "x_4", 0 0, L_000002154d8c51f0;  alias, 1 drivers
+    .scope S_000002154d8c65c0;
+T_0 ;
+    %vpi_call 2 17 "$dumpfile", "exercise1_3.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars", 32'sb11111111111111111111111111111111, S_000002154d8c6750 {0 0 0};
+    %vpi_call 2 19 "$monitor", "%b", v000002154d9fac00_0, v000002154d9fae80_0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_000002154d8c65c0;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002154d9faca0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002154d9fad40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002154d9fade0_0, 0, 1;
+    %vpi_call 2 26 "$display", "Simulating output for circuit1_3" {0 0 0};
+    %vpi_call 2 27 "$monitor", $time, " ", " ", "x_1=%b, x_2=%b, x_3=%b, X_4=%b, var1=%b", v000002154d9faca0_0, v000002154d9fad40_0, v000002154d9fade0_0, v000002154d9fae80_0, v000002154d9fac00_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002154d9faca0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002154d9fad40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002154d9fade0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002154d9faca0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002154d9fad40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002154d9fade0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002154d9faca0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002154d9fad40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002154d9fade0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002154d9faca0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002154d9fad40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002154d9fade0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002154d9faca0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002154d9fad40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002154d9fade0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002154d9faca0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002154d9fad40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002154d9fade0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002154d9faca0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002154d9fad40_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002154d9fade0_0, 0, 1;
+    %delay 2, 0;
+    %vpi_call 2 36 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "exercise1_3.v";

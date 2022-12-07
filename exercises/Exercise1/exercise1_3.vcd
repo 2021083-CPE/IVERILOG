@@ -1,0 +1,59 @@
+$date
+	Sun Oct 09 22:56:01 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench1_3 $end
+$scope module tb3 $end
+$var wire 1 ! var1 $end
+$var wire 1 " x_1 $end
+$var wire 1 # x_2 $end
+$var wire 1 $ x_3 $end
+$var wire 1 % x_4 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0%
+0$
+0#
+0"
+0!
+$end
+#1
+1%
+0!
+1$
+#2
+0$
+1#
+#3
+0%
+0!
+1$
+#4
+1%
+0!
+0$
+0#
+1"
+#5
+0%
+0!
+1$
+#6
+0$
+1#
+#7
+1%
+0!
+1$
+#9

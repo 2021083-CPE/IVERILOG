@@ -1,0 +1,94 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000195405797c0 .scope module, "testingFS" "testingFS" 2 11;
+ .timescale 0 0;
+v0000019540582230_0 .var "a", 0 0;
+v00000195405824b0_0 .var "b", 0 0;
+v0000019540582690_0 .net "borrowOut", 0 0, L_00000195405827d0;  1 drivers
+v0000019540582a50_0 .var "borrowin", 0 0;
+v0000019540582eb0_0 .net "diff", 0 0, L_0000019540582190;  1 drivers
+S_000001954053acd0 .scope module, "fs" "full_subtract" 2 15, 2 2 0, S_00000195405797c0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "diff";
+    .port_info 1 /OUTPUT 1 "borrowOut";
+    .port_info 2 /INPUT 1 "a";
+    .port_info 3 /INPUT 1 "b";
+    .port_info 4 /INPUT 1 "borrowin";
+L_00000195405cf890 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000019540579950_0 .net *"_ivl_10", 0 0, L_00000195405cf890;  1 drivers
+v0000019540553360_0 .net *"_ivl_11", 1 0, L_0000019540582370;  1 drivers
+v0000019540553400_0 .net *"_ivl_13", 1 0, L_0000019540582cd0;  1 drivers
+L_00000195405cf8d8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000001954053ae60_0 .net *"_ivl_16", 0 0, L_00000195405cf8d8;  1 drivers
+v000001954053af00_0 .net *"_ivl_17", 1 0, L_0000019540582050;  1 drivers
+v0000019540552a40_0 .net *"_ivl_3", 1 0, L_00000195405822d0;  1 drivers
+L_00000195405cf848 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000019540552ae0_0 .net *"_ivl_6", 0 0, L_00000195405cf848;  1 drivers
+v0000019540552b80_0 .net *"_ivl_7", 1 0, L_0000019540582f50;  1 drivers
+v0000019540552c20_0 .net "a", 0 0, v0000019540582230_0;  1 drivers
+v0000019540552cc0_0 .net "b", 0 0, v00000195405824b0_0;  1 drivers
+v0000019540552d60_0 .net "borrowOut", 0 0, L_00000195405827d0;  alias, 1 drivers
+v0000019540552e00_0 .net "borrowin", 0 0, v0000019540582a50_0;  1 drivers
+v0000019540582c30_0 .net "diff", 0 0, L_0000019540582190;  alias, 1 drivers
+L_00000195405827d0 .part L_0000019540582050, 1, 1;
+L_0000019540582190 .part L_0000019540582050, 0, 1;
+L_00000195405822d0 .concat [ 1 1 0 0], v0000019540582230_0, L_00000195405cf848;
+L_0000019540582f50 .concat [ 1 1 0 0], v00000195405824b0_0, L_00000195405cf890;
+L_0000019540582370 .arith/sub 2, L_00000195405822d0, L_0000019540582f50;
+L_0000019540582cd0 .concat [ 1 1 0 0], v0000019540582a50_0, L_00000195405cf8d8;
+L_0000019540582050 .arith/sub 2, L_0000019540582370, L_0000019540582cd0;
+    .scope S_00000195405797c0;
+T_0 ;
+    %vpi_call 2 18 "$dumpfile", "Drill1_2.vcd" {0 0 0};
+    %vpi_call 2 19 "$dumpvars", 32'sb11111111111111111111111111111111, S_00000195405797c0 {0 0 0};
+    %vpi_call 2 20 "$monitor", "%b", v0000019540582a50_0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_00000195405797c0;
+T_1 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019540582230_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000195405824b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019540582a50_0, 0, 1;
+    %end;
+    .thread T_1;
+    .scope S_00000195405797c0;
+T_2 ;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019540582230_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019540582230_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000195405824b0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019540582230_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000195405824b0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019540582a50_0, 0, 1;
+    %end;
+    .thread T_2;
+    .scope S_00000195405797c0;
+T_3 ;
+    %vpi_call 2 35 "$display", " a b borrowin difference borrowOout time" {0 0 0};
+    %vpi_call 2 36 "$monitor", " %b %b %b %b %b %b ", v0000019540582230_0, v00000195405824b0_0, v0000019540582a50_0, v0000019540582eb0_0, v0000019540582690_0, $time {0 0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "drill1_2.v";
