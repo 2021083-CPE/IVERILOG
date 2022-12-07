@@ -61,31 +61,56 @@ module Experiment2;
     twoA A2(a,b,twoAresult);
     twoB B2(a,b,twoBresult);
 
+    initial
+        begin
+            $dumpfile("experiment2.vcd");
+	        $dumpvars(-1, A1,B1,A2,B2);
+	        $monitor("%b",  NAND1,negativeOR1,NOR1,negativeAND1,
+                            oneBresult,
+                            twoAresult,
+                            twoBresult);
+        end
     initial begin
         #1 $display("DeMorgan's Law");
-        #1 a=0; b=0;
         #1 $display("~((a)(b))");
+        #1 a=0; b=0;
            $monitor("a=%b, b=%b, n=%b",a,b,NAND1);
         #1 a=0; b=1;
         #1 a=1; b=0;
         #1 a=1; b=1;
+
+       
         #1 $display("(~a)+(~b)");
-           $monitor("a=%b, b=%b, n=%b",a,b,negativeOR1);
-        #1 a=1; b=0;
-        #1 a=0; b=1;
         #1 a=0; b=0;
-        #1 $display("Therefore, ~((a)(b)) = (~a)+(~b)\n");
+           $monitor("a=%b, b=%b, n=%b",a,b,negativeOR1);
+        #1 a=0; b=1;
+        #1 a=1; b=0;
+        #1 a=1; b=1;
+        #1 if (NAND1==negativeOR1) begin
+            $display("Therefore, ~((a)(b)) == (~a)+(~b)\n");
+        end else begin
+            $display("Therefore, ~((a)(b)) != (~a)+(~b)\n");
+        end
+
         #1 $display("~(a+b)");
+        #1 a=0; b=0;
            $monitor("a=%b, b=%b, n=%b",a,b,NOR1);
         #1 a=0; b=1;
         #1 a=1; b=0;
         #1 a=1; b=1;
+
         #1 $display("(~a)(~b)");
-           $monitor("a=%b, b=%b, n=%b",a,b,negativeAND1);
-        #1 a=1; b=0;
-        #1 a=0; b=1;
         #1 a=0; b=0;
-        #1 $display("Therefore, ~(a+b) = (~a)(~b) \n");
+           $monitor("a=%b, b=%b, n=%b",a,b,negativeAND1);
+        #1 a=0; b=1;
+        #1 a=1; b=0;
+        #1 a=1; b=1;
+        #1 if (NOR1==negativeAND1) begin
+            $display("Therefore, ~(a+b) == (~a)(~b)\n");
+        end else begin
+            $display("Therefore, ~(a+b) != (~a)(~b)\n");
+        end
+
         #1 $display("part 1B");
            $monitor("a=%b, b=%b, n=%b",a,b,oneBresult);
         #1 a=0; b=1;
@@ -101,5 +126,6 @@ module Experiment2;
         #1 a=0; b=1;
         #1 a=1; b=0;
         #1 a=1; b=1;
+        #1 $finish;
     end
 endmodule
