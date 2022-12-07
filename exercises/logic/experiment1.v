@@ -8,9 +8,10 @@ module Lab1Experiment;
     or(or1,i1,i2);
 initial
     begin
-	$dumpfile("experiment1.vcd")
-	    $dumpvars(-1, tb1);
-	    $monitor("%b", i1); 
+	$dumpfile("Lab1CPE314.vcd");
+	        $dumpvars(-1, i1,i2,not1,not2,and1,or1);
+	        $monitor("%b", i1,i2,not1,not2,and1,or1);
+    end
 
     initial begin
         #1 i1=0;
