@@ -1,0 +1,277 @@
+$date
+	Sun Dec 11 11:02:45 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Lab4TB $end
+$scope module p1 $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$var wire 1 # f $end
+$upscope $end
+$upscope $end
+$scope module Lab4TB $end
+$scope module p3 $end
+$var wire 1 $ AB $end
+$var wire 1 % AC $end
+$var wire 1 & BnotC $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$var wire 1 ' c $end
+$var wire 1 ( g $end
+$var wire 1 ) notC $end
+$upscope $end
+$upscope $end
+$scope module Lab4TB $end
+$scope module p5 $end
+$var wire 1 * ABC $end
+$var wire 1 + CD $end
+$var wire 1 ! a $end
+$var wire 1 , and2 $end
+$var wire 1 " b $end
+$var wire 1 ' c $end
+$var wire 1 - d $end
+$var wire 1 . h $end
+$var wire 1 / nor1 $end
+$var wire 1 0 notCD $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+x0
+x/
+x.
+x-
+x,
+x+
+x*
+x)
+x(
+x'
+x&
+x%
+x$
+x#
+x"
+x!
+$end
+#1
+0#
+0(
+0,
+0&
+0$
+0%
+0*
+0"
+0!
+#3
+1#
+x(
+x&
+1"
+#4
+0&
+x%
+0"
+1!
+#5
+0#
+1(
+x,
+1$
+x&
+x*
+1"
+#6
+0(
+0,
+1)
+0&
+0$
+0%
+0*
+0'
+0"
+0!
+#8
+1.
+1/
+00
+0)
+1+
+1'
+#9
+x.
+1(
+x/
+1&
+x0
+1#
+1)
+x+
+0'
+1"
+#10
+1.
+0(
+1/
+0&
+00
+0)
+1+
+1'
+#11
+x.
+x/
+x0
+1)
+x+
+0'
+0"
+1!
+#12
+1.
+1/
+1(
+00
+0)
+1%
+1+
+1'
+#13
+x.
+x/
+0#
+1&
+x0
+1)
+0%
+x+
+1$
+0'
+1"
+#14
+0&
+0/
+00
+0)
+1%
+1*
+1+
+1'
+#15
+10
+0(
+0/
+0.
+1)
+0+
+0$
+0%
+0*
+0-
+0'
+0"
+0!
+#17
+1/
+00
+1+
+1.
+1-
+#18
+0)
+0-
+1'
+#19
+1-
+#20
+0.
+1(
+0/
+1&
+10
+1#
+1)
+0+
+0-
+0'
+1"
+#21
+1/
+00
+1+
+1.
+1-
+#22
+0(
+0&
+0)
+0-
+1'
+#23
+1-
+#24
+0.
+0/
+10
+1)
+0+
+0-
+0'
+0"
+1!
+#25
+1/
+00
+1+
+1.
+1-
+#26
+1(
+0)
+1%
+0-
+1'
+#27
+1-
+#28
+0.
+0/
+0#
+1&
+10
+1)
+0%
+0+
+1$
+0-
+0'
+1"
+#29
+1/
+00
+1+
+1.
+1-
+#30
+0.
+0&
+0/
+0)
+1%
+1*
+0-
+1'
+#31
+1.
+1-
