@@ -1,0 +1,275 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000187f83f9e30 .scope module, "Lab5TB" "Lab5TB" 2 48;
+ .timescale 0 0;
+v00000187f8471d90_0 .net "D", 0 0, L_00000187f83f8b10;  1 drivers
+v00000187f8472010_0 .net "D1", 0 0, L_00000187f83f8e20;  1 drivers
+v00000187f84720b0_0 .var "a", 0 0;
+v00000187f8471b10_0 .var "b", 0 0;
+v00000187f8472b50_0 .var "bIn", 0 0;
+v00000187f84728d0_0 .net "bOut", 0 0, L_00000187f83f84f0;  1 drivers
+v00000187f8471110_0 .net "bOut1", 0 0, L_00000187f83f8560;  1 drivers
+v00000187f8472150_0 .var "c_In", 0 0;
+v00000187f8472650_0 .net "c_out", 0 0, L_00000187f83f8c60;  1 drivers
+v00000187f84721f0_0 .net "carry", 0 0, L_00000187f83f8950;  1 drivers
+v00000187f8472970_0 .net "sum", 0 0, L_00000187f83f89c0;  1 drivers
+v00000187f8472a10_0 .net "sum1", 0 0, L_00000187f83f8e90;  1 drivers
+S_00000187f83fb220 .scope module, "FFSUB" "fullSubtract" 2 59, 2 33 0, S_00000187f83f9e30;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /INPUT 1 "bIn";
+    .port_info 3 /OUTPUT 1 "D";
+    .port_info 4 /OUTPUT 1 "bOut";
+L_00000187f83f8b80 .functor NOT 1, v00000187f84720b0_0, C4<0>, C4<0>, C4<0>;
+L_00000187f83f8cd0 .functor XOR 1, v00000187f84720b0_0, v00000187f8471b10_0, C4<0>, C4<0>;
+L_00000187f83f8d40 .functor AND 1, L_00000187f83f8b80, v00000187f8471b10_0, C4<1>, C4<1>;
+L_00000187f83f8db0 .functor NOT 1, L_00000187f83f8cd0, C4<0>, C4<0>, C4<0>;
+L_00000187f83f8e20 .functor XOR 1, L_00000187f83f8cd0, v00000187f8472b50_0, C4<0>, C4<0>;
+L_00000187f83f86b0 .functor AND 1, L_00000187f83f8db0, v00000187f8472b50_0, C4<1>, C4<1>;
+L_00000187f83f8560 .functor OR 1, L_00000187f83f86b0, L_00000187f83f8d40, C4<0>, C4<0>;
+v00000187f8402370_0 .net "A", 0 0, v00000187f84720b0_0;  1 drivers
+v00000187f8402870_0 .net "B", 0 0, v00000187f8471b10_0;  1 drivers
+v00000187f8402a50_0 .net "D", 0 0, L_00000187f83f8e20;  alias, 1 drivers
+v00000187f8401f10_0 .net "and1", 0 0, L_00000187f83f8d40;  1 drivers
+v00000187f8401dd0_0 .net "and2", 0 0, L_00000187f83f86b0;  1 drivers
+v00000187f84020f0_0 .net "bIn", 0 0, v00000187f8472b50_0;  1 drivers
+v00000187f8402190_0 .net "bOut", 0 0, L_00000187f83f8560;  alias, 1 drivers
+v00000187f8401fb0_0 .net "not1", 0 0, L_00000187f83f8b80;  1 drivers
+v00000187f8402230_0 .net "not2", 0 0, L_00000187f83f8db0;  1 drivers
+v00000187f84022d0_0 .net "xor1", 0 0, L_00000187f83f8cd0;  1 drivers
+S_00000187f83fb3b0 .scope module, "FLADD" "fullAdder" 2 57, 2 9 0, S_00000187f83f9e30;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c_In";
+    .port_info 3 /OUTPUT 1 "sum";
+    .port_info 4 /OUTPUT 1 "c_out";
+L_00000187f83f8a30 .functor XOR 1, v00000187f84720b0_0, v00000187f8471b10_0, C4<0>, C4<0>;
+L_00000187f83f8e90 .functor XOR 1, L_00000187f83f8a30, v00000187f8472150_0, C4<0>, C4<0>;
+L_00000187f83f8790 .functor AND 1, v00000187f84720b0_0, v00000187f8471b10_0, C4<1>, C4<1>;
+L_00000187f83f8aa0 .functor AND 1, L_00000187f83f8a30, v00000187f8472150_0, C4<1>, C4<1>;
+L_00000187f83f8c60 .functor OR 1, L_00000187f83f8aa0, L_00000187f83f8790, C4<0>, C4<0>;
+v00000187f8402910_0 .net "a", 0 0, v00000187f84720b0_0;  alias, 1 drivers
+v00000187f8402690_0 .net "and1", 0 0, L_00000187f83f8aa0;  1 drivers
+v00000187f8402730_0 .net "and2", 0 0, L_00000187f83f8790;  1 drivers
+v00000187f84027d0_0 .net "b", 0 0, v00000187f8471b10_0;  alias, 1 drivers
+v00000187f8402050_0 .net "c_In", 0 0, v00000187f8472150_0;  1 drivers
+v00000187f8402410_0 .net "c_out", 0 0, L_00000187f83f8c60;  alias, 1 drivers
+v00000187f8401bf0_0 .net "sum", 0 0, L_00000187f83f8e90;  alias, 1 drivers
+v00000187f84024b0_0 .net "xor1", 0 0, L_00000187f83f8a30;  1 drivers
+S_00000187f837cc40 .scope module, "HFADD" "halfAdder" 2 56, 2 1 0, S_00000187f83f9e30;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "Sum";
+    .port_info 3 /OUTPUT 1 "Carry";
+L_00000187f83f8950 .functor AND 1, v00000187f84720b0_0, v00000187f8471b10_0, C4<1>, C4<1>;
+L_00000187f83f89c0 .functor XOR 1, v00000187f84720b0_0, v00000187f8471b10_0, C4<0>, C4<0>;
+v00000187f8401d30_0 .net "A", 0 0, v00000187f84720b0_0;  alias, 1 drivers
+v00000187f8402550_0 .net "B", 0 0, v00000187f8471b10_0;  alias, 1 drivers
+v00000187f84029b0_0 .net "Carry", 0 0, L_00000187f83f8950;  alias, 1 drivers
+v00000187f84025f0_0 .net "Sum", 0 0, L_00000187f83f89c0;  alias, 1 drivers
+S_00000187f837cdd0 .scope module, "HFSUB" "halfSubtract" 2 58, 2 22 0, S_00000187f83f9e30;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "D";
+    .port_info 3 /OUTPUT 1 "bOut";
+L_00000187f83f8b10 .functor XOR 1, v00000187f84720b0_0, v00000187f8471b10_0, C4<0>, C4<0>;
+L_00000187f83f8640 .functor NOT 1, v00000187f84720b0_0, C4<0>, C4<0>, C4<0>;
+L_00000187f83f84f0 .functor AND 1, v00000187f8471b10_0, L_00000187f83f8640, C4<1>, C4<1>;
+v00000187f8401c90_0 .net "A", 0 0, v00000187f84720b0_0;  alias, 1 drivers
+v00000187f8401b50_0 .net "B", 0 0, v00000187f8471b10_0;  alias, 1 drivers
+v00000187f8401e70_0 .net "D", 0 0, L_00000187f83f8b10;  alias, 1 drivers
+v00000187f8471e30_0 .net "bOut", 0 0, L_00000187f83f84f0;  alias, 1 drivers
+v00000187f8471390_0 .net "not1", 0 0, L_00000187f83f8640;  1 drivers
+    .scope S_00000187f83f9e30;
+T_0 ;
+    %vpi_call 2 63 "$dumpfile", "experiment5.vcd" {0 0 0};
+    %vpi_call 2 64 "$dumpvars", 32'sb11111111111111111111111111111111, S_00000187f837cc40, S_00000187f83fb3b0, S_00000187f837cdd0, S_00000187f83fb220 {0 0 0};
+    %vpi_call 2 65 "$monitor", "%b", v00000187f8472970_0, v00000187f84721f0_0, v00000187f8472a10_0, v00000187f8472650_0, v00000187f8471d90_0, v00000187f84728d0_0, v00000187f8472010_0, v00000187f8471110_0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_00000187f83f9e30;
+T_1 ;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 72 "$display", "Simulating Half Adder" {0 0 0};
+    %vpi_call 2 73 "$monitor", "A=%b, B=%b, sum=%b, carry=%b", v00000187f84720b0_0, v00000187f8471b10_0, v00000187f8472970_0, v00000187f84721f0_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8472150_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 79 "$display", "Simulating Full Adder" {0 0 0};
+    %vpi_call 2 80 "$monitor", "A=%b, B=%b, c_In=%b, sum=%b, C_out=%b", v00000187f84720b0_0, v00000187f8471b10_0, v00000187f8472150_0, v00000187f8472a10_0, v00000187f8472650_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8472150_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8472150_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8472150_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8472150_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8472150_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8472150_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8472150_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 90 "$display", "Simulating Half Subtract" {0 0 0};
+    %vpi_call 2 91 "$monitor", "A=%b, B=%b, D=%b, bOut=%b", v00000187f84720b0_0, v00000187f8471b10_0, v00000187f8471d90_0, v00000187f84728d0_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8472b50_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 97 "$display", "Simulating Full Subtract" {0 0 0};
+    %vpi_call 2 98 "$monitor", "A=%b, B=%b, bIn=%b, D=%b, bOut=%b", v00000187f84720b0_0, v00000187f8471b10_0, v00000187f8472b50_0, v00000187f8472010_0, v00000187f8471110_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8472b50_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8472b50_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8472b50_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8472b50_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8472b50_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000187f8472b50_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f84720b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8471b10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000187f8472b50_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 107 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "experiment5.v";
